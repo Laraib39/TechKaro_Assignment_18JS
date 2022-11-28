@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LaraibShaikh_Assignment_18</title>
+</head>
+<body>
+    <h1>JavaScript Assignment 18</h1>
+    <h3>By Laraib Shaikh</h3>
+    <p>===============================</p>
+    <h3>Output of Task 01</h3>
+    <p id="details"></p>
+
+    <h3>Output of Task 02</h3>
+    <p id="doubleFunc"></p>
+
+    <h3>Output of Task 03</h3>
+    <p id="squareFunc"></p>
+
+    <h3>Output of Task 04</h3>
+    <p id="ageCheck1"></p>
+    <p id="ageCheck2"></p>
+    <p id="ageCheck3"></p>
+
+    <h3>Output of Task 05</h3>
+    <p id="sumFunc"></p>
+
+    <h3>Output of Task 06</h3>
+    <p id="printCityHead"></p>
+    <p id="printCity"></p>
+
+    <h3>Output of Task 07</h3>
+    <p id="printItems"></p>
+
+    <h3>Output of Task 08</h3>
+    <p id="areaOfRectangle"></p>
+    <script>
+        //Q1 - Write a function that takes your name and age as an input parameter and print it by using
+        //string concatenation.
+        //Solution:
+
+        function myDetails(name, age){
+            document.getElementById("details").innerHTML = name.concat(age);
+            console.log(name.concat(age));
+        }
+        myDetails("Laraib Shaikh ", 22)
+
+        // Q2 - Write a function name ‘Double’ that takes an input parameter and multiply that parameter
+        // by 2 and store the result in a variable and call the function by passing an argument.
+        // Solution:
+
+        function Double(inputNum){
+            result = inputNum * 2;
+            return result;
+        }
+        document.getElementById("doubleFunc").innerHTML = "90 multiplied by 2 is: " + Double(90);
+        console.log("===================================")
+        console.log("90 multiplied by 2 is: " + Double(90));
+        
+        // Q3 - Write a function to print the square of a number by using function expression and that
+        // function can be used as variable value for other variables.
+        //Solution:
+
+        var numSquare = function (num) {
+            squareResult = Math.pow(num,2);
+            return squareResult;
+        }
+        document.getElementById("squareFunc").innerHTML = "Square of 4 is: "+ numSquare(4);
+        console.log("===================================")
+        console.log("Square of 4 is: " + numSquare(4));
+        
+        // Q4 - Write an arrow function as an expression to check the age of the baby . If the age of the
+        // baby is less than 18 print Baby else print adult.
+        //Solution: 
+
+        var checkAge = (age) => {
+            if(age < 18){
+                printStr = "Baby";
+            }
+            else{
+                printStr = "Adult";
+            }
+            return printStr;
+        }
+        document.getElementById("ageCheck1").innerHTML = "The age is 5 then the person is: " + checkAge(5);
+        document.getElementById("ageCheck2").innerHTML = "The age is 18 then the person is: "+ checkAge(18);
+        document.getElementById("ageCheck3").innerHTML = "The age is 25 then the person is: " + checkAge(25);
+
+        // Q5 - Write an arrow function and print a sum of two numbers by passing a single parameter
+        // inside the arrow function.
+        // Solution:
+
+        var firstNum = 70;
+        var sumOfTwo = (SecondNum) => {
+            sum = firstNum + SecondNum;
+            return sum;
+        }
+        document.getElementById("sumFunc").innerHTML = "Sum of two numbers is: " + sumOfTwo(100);
+        console.log("===================================");
+        console.log("Sum of two numbers is: " + sumOfTwo(100));
+
+        // Q6 - Write an object ‘cities’ and loop values of the object's properties by using for… in Loop
+        // and print them.
+        // Solution:
+
+        var cities = {
+            city01: "Islamabad",
+            city02: "Lahore",
+            city03: "Peshawar",
+            city04: "Multan",
+            city05: "Quetta",
+            city06: "Karachi",
+            city07: "Hyderabad"
+        };
+
+        document.getElementById("printCityHead").innerHTML = "Cities of Pakistan: ";
+        console.log("===================================");
+        console.log("Cities of Pakistan: ");
+        console.log(" ");
+        let printCities = '';
+        for(let city in cities){
+            printCities += cities[city] +", ";
+            document.getElementById("printCity").innerHTML = printCities;
+            console.log(cities[city]);
+        }
+        
+        // Q7 - Write a for…of loop to traverse the array and print the elements of an array with indices.
+        // Solution:
+
+        console.log("===================================");
+        console.log("SuperMarket items with indices: ");
+        console.log(" ");
+        var superMarket = ["Fruits", "Vegetables", "Household Items", "Cosmetics", "Meat", "Health products"];
+        let showItems = '';
+        for(let items of superMarket){
+            showItems += superMarket.indexOf(items) + ": " + items + "<br>";
+            document.getElementById("printItems").innerHTML = showItems;
+            console.log(superMarket.indexOf(items) + ": " + items);
+        }
+        
+        // Q8 - Write an unnamed /anonymous function which calculates the area of a rectangle.
+        // Solution:
+        console.log("===================================");
+        console.log("Anonymous Function: ");
+        console.log(" ");
+        console.log("Area Of Rectangle: ");
+
+        var area = function (width, height) {
+            areaResult = width * height;
+            console.log(areaResult);
+            return areaResult;
+        };
+        document.getElementById("areaOfRectangle").innerHTML = "Area Of Rectangle: " + area(90,90);
+    </script>
+</body>
+</html>
